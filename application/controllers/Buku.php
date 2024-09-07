@@ -51,9 +51,10 @@ class Buku extends CI_Controller {
         $data = array(
                 'ulasan' => $ulasan,
                 'buku'  => $buku,
+                'halaman'  => $buku,
         );
         $this->load->view('template/header');
-        $this->load->view('template/sidebar');
+        $this->load->view('template/sidebar', $data);
         $this->load->view('template/footer');
         $this->load->view('detail_buku', $data);   
         }

@@ -17,9 +17,10 @@ class Buku_tambah extends CI_Controller {
         $kategori = $this->db->get()->result_array();
         $data = array(
             'kategori'   => $kategori,
+            'halaman'   => $buku,
         );
         $this->load->view('template/header');
-        $this->load->view('template/sidebar');
+        $this->load->view('template/sidebar', $data);
         $this->load->view('template/footer');
         $this->load->view('buku_tambah', $data);
 	}
